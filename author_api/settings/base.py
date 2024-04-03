@@ -118,7 +118,7 @@ USE_TZ = True
 
 SITE_ID = 1
 
-ADMIN_UDL = "supersecret/"
+ADMIN_URL = "supersecret/"
 
 
 # Static files (CSS, JavaScript, Images)
