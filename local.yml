@@ -4,7 +4,8 @@ services:
   api:
     build:
       context: .
-      dokerfile: ./docker/local/django/Dockerfile
+      dockerfile: ./docker/local/django/Dockerfile
+    command: /start
     volumes:
       - .:/app:z
       - static_volume:/app/staticfiles
@@ -17,24 +18,24 @@ services:
     depends_on:
       - postgres
       - mailhog
-    command: /start
     networks:
       - authors-api
-      -
+
   postgres:
     build:
       context: .
-      dokerfile: ./docker/local/postgres/Dockerfile
+      dockerfile: ./docker/local/postgres/Dockerfile
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
       - local_postgres_data_backups:/backups
-    env_files:
+    env_file:
       - ./.envs/.local/.postgres
     networks:
       - authors-api
+
   mailhog:
     image: mailhog/mailhog:v1.0.0
-    container_nme: mailhog
+    container_name: mailhog
     ports:
       - "8025:8025"
     networks:
