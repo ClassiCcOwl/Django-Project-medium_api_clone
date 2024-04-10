@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -o errexit
+
+set -o nounset
+
+
+exec watchfiles clerey.__main__.main --args '-A authors_api.celery worker -l INFO'
