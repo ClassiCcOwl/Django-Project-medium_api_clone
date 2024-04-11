@@ -7,6 +7,6 @@ set -o pipefail
 set -o nounset
 
 
-exec watchfiles clery.__main__.main \
+exec watchfiles celery.__main__.main \
  --args \
- "-A authors_api.celery -b \ "${CELERY_BROKER}\" flower --basic_auth=\"${CELERY_FLOWER_USER}:${CLERY_FLOWER_PASSWORD}\""
+ "-A authors_api.celery -b \"${CELERY_BROKER}\" flower --basic_auth=\"${CELERY_FLOWER_USER}:${CELERY_FLOWER_PASSWORD}\""
