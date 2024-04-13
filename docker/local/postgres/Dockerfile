@@ -1,4 +1,4 @@
-FROM postgres:15-bullseye
+FROM postgres:14.1
 
 COPY ./docker/local/postgres/maintenance /usr/local/bin/maintenance
 
