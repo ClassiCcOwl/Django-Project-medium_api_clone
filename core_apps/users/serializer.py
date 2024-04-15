@@ -14,7 +14,7 @@ class UserSerializer(serializers.ModelSerializer):
     gender = serializers.CharField(source="profile.gender")
     phone_number = PhoneNumberField(source="profile.phone_number")
     profile_photo = serializers.ReadOnlyField(source="profile.profile_photo.url")
-    country = CountryField(source="proifle.country")
+    country = CountryField(source="profile.country")
     city = serializers.CharField(source="profile.city")
 
     class Meta:
@@ -34,7 +34,7 @@ class UserSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         representation = super(UserSerializer, self).to_representation(instance)
 
-        if instance.is_supperuser:
+        if instance.is_superuser:
             representation["admin"] = True
         return representation
 
