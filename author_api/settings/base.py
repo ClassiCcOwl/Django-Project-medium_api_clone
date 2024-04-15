@@ -189,11 +189,11 @@ REST_AUTH = {
     "USE_JWT": True,
     "JWT_AUTH_COOKIE": "authors-access-token",
     "JWT_AUTH_REFRESH_COOKIE": "authores-refresh-token",
-    "REGISTER_SERIALIZER": "core_apps.users.serializers.CustomRegisterSerializer",
+    "REGISTER_SERIALIZER": "core_apps.users.serializer.CustomRegisterSerializer",
 }
 
 AUTHENTICATION_BACKENDS = [
-    "allauth.account.auth_backends.AuthenticationsBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
 ACCOUNT_AUTHENTICATION_METHOD = "email"

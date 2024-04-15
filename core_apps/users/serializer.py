@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fileds = [
+        fields = [
             "id",
             "email",
             "first_name",
