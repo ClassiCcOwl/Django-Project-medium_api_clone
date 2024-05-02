@@ -9,6 +9,18 @@ from .read_time_engine import ArticleReadTimeEngine
 User = get_user_model()
 
 
+class Clap(TimeStampedModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    article = models.ForeignKey("Article", models.CASCADE)
+
+    class Meta:
+        unique_together = ["user", "article"]
+        ordering = ["-created_at"]
+
+    def __str__(self) -> str:
+        return f"{self.user.first_name} claped {self.article.title}"
+
+
 class Article(TimeStampedModel):
 
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="articles")
@@ -21,6 +33,7 @@ class Article(TimeStampedModel):
     )
 
     tags = TaggableManager()
+    claps = models.ManyToManyField(User, through=Clap, related_name="clapped_articles")
 
     def __str__(self) -> str:
         return f"{self.author.firs_name}'s article"
