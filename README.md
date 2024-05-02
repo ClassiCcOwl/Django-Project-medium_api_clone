@@ -14,5 +14,5 @@ It's using:
 
 ## TODO
 
-- [] Complete the course
+- [x] Complete the course
 - [] Make some Customization
