@@ -51,3 +51,12 @@ isort-diff:
 
 isort:
 	docker compose -f local.yml exec api isort . --skip env --skip migrations	
+
+make-index:
+	docker compose -f local.ylm exec api python manage.py search_index --create
+	
+populate-index:
+	docker compose -f local.ylm exec api python manage.py search_index --populate
+
+rebuild-index:
+	docker compose -f local.ylm exec api python manage.py search_index --rebuild
