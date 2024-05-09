@@ -19,7 +19,7 @@ extend-exclude = '''
 
 '''
 
-[tool.isor]
+[tool.isort]
 profile = "black"
 
 [tool.flake8]
