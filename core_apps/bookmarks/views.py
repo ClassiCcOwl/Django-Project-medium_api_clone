@@ -1,11 +1,13 @@
-from rest_framework import generics, permissions
-from .models import Bookmark
-from .serializer import BookmarkSerializer
+from uuid import UUID
 
 from django.db import IntegrityError
-from rest_framework.exceptions import ValidationError, NotFound
+from rest_framework import generics, permissions
+from rest_framework.exceptions import NotFound, ValidationError
+
 from core_apps.articles.models import Article
-from uuid import UUID
+
+from .models import Bookmark
+from .serializer import BookmarkSerializer
 
 
 class BookmarkCreateView(generics.CreateAPIView):
