@@ -68,6 +68,7 @@ class ArticleSerializer(serializers.ModelSerializer):
     def get_updated_at(self, obj):
         then = obj.updated_at
         formatted_date = then.strftime("%m/%d/%Y, %H:%M:%S")
+        return formatted_date
 
     def create(self, validated_data):
         tags = validated_data.pop("tags")
