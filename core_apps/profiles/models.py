@@ -9,7 +9,6 @@ User = get_user_model()
 
 
 class Profile(TimeStampedModel):
-
     class Gender(models.TextChoices):
         MALE = (
             "M",

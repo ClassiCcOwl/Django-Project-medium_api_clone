@@ -22,7 +22,6 @@ class Clap(TimeStampedModel):
 
 
 class Article(TimeStampedModel):
-
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="articles")
     title = models.CharField(verbose_name=_("Title"), max_length=255)
     slug = AutoSlugField(populate_from="title", always_update=True, unique=True)
@@ -56,7 +55,6 @@ class Article(TimeStampedModel):
 
 
 class ArticleView(TimeStampedModel):
-
     article = models.ForeignKey(
         Article, on_delete=models.CASCADE, related_name="article_views"
     )

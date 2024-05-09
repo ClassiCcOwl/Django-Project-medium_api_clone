@@ -28,7 +28,6 @@ class ArticlesJSONRenderer(JSONRenderer):
     charset = "utf-8"
 
     def render(self, data, accepted_media_type=None, renderer_context=None):
-
         status_code = renderer_context["response"].status_code
 
         errors = data.get("errors", None)

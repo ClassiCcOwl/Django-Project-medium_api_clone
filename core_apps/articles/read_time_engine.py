@@ -4,7 +4,6 @@ from math import ceil
 
 
 class ArticleReadTimeEngine:
-
     @staticmethod
     def word_count(text):
         words = re.findall(r"\+", text)

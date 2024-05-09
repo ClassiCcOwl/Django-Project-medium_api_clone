@@ -39,7 +39,6 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 
 class UpdateProfileSerializer(serializers.ModelSerializer):
-
     country = CountryField(name_only=True)
 
     class Meta:

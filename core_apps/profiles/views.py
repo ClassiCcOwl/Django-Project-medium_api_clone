@@ -26,7 +26,6 @@ class ProfileListAPIView(generics.ListAPIView):
 
 
 class ProfileDetailAPIView(generics.RetrieveAPIView):
-
     permission_classes = (IsAuthenticated,)
     serializer_class = ProfileSerializer
     renderer_classes = (ProfileJSONREnderer,)
@@ -62,7 +61,6 @@ class FollowerLisView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, requst, format=None):
-
         try:
             profile = Profile.objects.get(user__id=requst.user.id)
             follower_profiles = profile.followers.all()
@@ -81,7 +79,6 @@ class FollowingLisView(APIView):
     # permission_classes = (IsAuthenticated,)
 
     def get(self, requst, user_id, format=None):
-
         try:
             profile = Profile.objects.get(user__id=user_id)
             following_profiles = profile.following.all()

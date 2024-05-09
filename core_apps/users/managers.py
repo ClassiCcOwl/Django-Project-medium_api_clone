@@ -51,7 +51,7 @@ class CustomUserManager(BaseUserManager):
             last_name=last_name,
             email=email,
             password=password,
-            **extra_fields
+            **extra_fields,
         )
         user.save(using=self._db)
         return user
