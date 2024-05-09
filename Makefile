@@ -53,10 +53,17 @@ isort:
 	docker compose -f local.yml exec api isort . --skip env --skip migrations	
 
 make-index:
-	docker compose -f local.ylm exec api python manage.py search_index --create
+	docker compose -f local.yml exec api python manage.py search_index --create
 	
 populate-index:
-	docker compose -f local.ylm exec api python manage.py search_index --populate
+	docker compose -f local.yml exec api python manage.py search_index --populate
 
 rebuild-index:
-	docker compose -f local.ylm exec api python manage.py search_index --rebuild
+	docker compose -f local.yml exec api python manage.py search_index --rebuild
+
+
+pytest-in-console:
+	docker compose -f local.yml run --rm api pytest -p no:warnings --cov=. -v 
+
+pytest-in-html:
+	docker compose -f local.yml run --rm api pytest -p no:warnings --cov=. --cov-report html 
