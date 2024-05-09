@@ -11,6 +11,7 @@ It's using:
 - celery
 - postgres
 - docker
+- django elasticsearch dsl
 
 ## TODO
 
