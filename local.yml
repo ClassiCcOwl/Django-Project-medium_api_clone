@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   es:
-    image: elasticseach:7.17.9
+    image: elasticsearch:7.17.9
     environment:
       - discovery.type=single-node
     ports:
