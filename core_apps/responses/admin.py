@@ -13,7 +13,7 @@ class ResponseAdmin(admin.ModelAdmin):
         "content",
         "created_at",
     ]
-    list_display_links = ["plid", "id", "user"]
+    list_display_links = ["pkid", "id", "user"]
 
 
 admin.site.register(Response, ResponseAdmin)

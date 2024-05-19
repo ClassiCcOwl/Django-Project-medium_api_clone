@@ -75,7 +75,7 @@ class ArticleRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ClapArticleView(generics.CreateAPIView, generics.DestroyAPIView):
-    queryset = Clap.object.all()
+    queryset = Clap.objects.all()
     serializer_class = ClapSerializer
 
     def create(slef, request, *args, **kwargs):

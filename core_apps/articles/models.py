@@ -64,7 +64,7 @@ class ArticleView(TimeStampedModel):
         User, on_delete=models.SET_NULL, null=True, related_name="user_views"
     )
 
-    viewr_ip = models.GenericIPAddressField(
+    viewer_ip = models.GenericIPAddressField(
         verbose_name=_("viewer IP"), null=True, blank=True
     )
 
